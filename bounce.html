@@ -27,8 +27,11 @@ function drawBall (content) {
 ballX = ballX + dx;
 ballY=ballY + dy;
 // If we've hit the left or right, turn around
-if ballX > CANVAS_WIDTH || ballX < 0 {
-dx = -dy;
+if( ballX > CANVAS_WIDTH || ballX < 0 ){
+  dx = -dx;
+}
+if( ballY > CANVAS_HEIGHT || ballY < 0 ){
+    dy = -dy;
 }
 // Actually draw the ball
 context.beginPath();
@@ -69,6 +72,6 @@ border-right-style: solid;
 </head>
 <body>
 <h1>Bouncy Ball</h1>
-<camvas id="bounceCanvas"width="500" height="300"></canvas>
+<canvas id="bounceCanvas" width="500" height="300"></canvas>
 </body>
 </html>
