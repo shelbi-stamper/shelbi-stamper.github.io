@@ -16,9 +16,13 @@
       // The x and y position of the ball. Start in the center
       var ballX = CANVAS_WIDTH / 2;
       var ballY = CANVAS_HEIGHT / 2;
+      var ballX2 = CANVAS_WIDTH / 2;
+      var ballY2 = CANVAS_HEIGHT / 2;
       // The current speed of the ball
       var dx = 1;
       var dy = 5;
+      var dx2 = -1;
+      var dy2 = -5;
       /**
        * This function takes a 2d canvas context and draws a ball on it at ballX and ballY
        * of radius BALL_RADIUS and color BALL_COLOR.
@@ -27,6 +31,8 @@
         // Move the ball
         ballX = ballX + dx;
         ballY = ballY + dy;
+        bal X2 = ballX2 + dx2;
+        ballY2 = ballY2 + dy2;
         // If we've hit the left or right, turn around
         if (ballX > CANVAS_WIDTH || ballX < 0) {
           dx = -dx;
@@ -35,10 +41,23 @@
         if (ballY > CANVAS_HEIGHT || ballY < 0) {
           dy = -dy;
         }
+        // If we've hit the left or right, turn around
+         if (ballX2 > CANVAS_HEIGHT || ballX2 < 0) {
+           dx2 = -dy2
+         }
+        if (ballY2 > CANVAS_HEIGHT || ballY2 < 0) {
+          dy2 = -dy2;
+        } 
         // Actually draw the ball
         context.beginPath();
         context.fillStyle = BALL_COLOR;
         context.arc(ballX, ballY, BALL_RADIUS, 0, 2 * Math.PI, true);
+        context.closePath();
+        context.fill();
+        // Actually draw the ball
+        context.beginPath();
+        context.fillStyle = BALL_COLOR2;
+        context.arc(ballX2, ballY2, BALL_RADIUS, 0, 2 * Math.PI, true);
         context.closePath();
         context.fill();
       }
