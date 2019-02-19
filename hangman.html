@@ -32,20 +32,20 @@
          {
            //Quit
            break;
-           }else if (guess.length !== 1)
+          }else if (guess.length !== 1)
           {
              alert("You must enter only a SINGLE letter!");
-             }else{
+           }else{
                //they have guessed a letter, is it in the word?
                for(var j = 0; j < word.length; j++)
                {
-               answerArray[j] === guess;
-               {
-               answerArray [j] = guess;
-               remainingLetters--;
+                  if(word[j] === guess)
+                  {
+                    answerArray [j] = guess;
+                    remainingLetters--;
+                  }
+                }
               }
-             }
-            }
            }
            alert("Good job! The answer was " + word);
            </script>
