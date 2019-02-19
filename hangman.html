@@ -39,7 +39,7 @@
                //they have guessed a letter, is it in the word?
                for(var j = 0; j < word.length; j++)
                {
-                  if(word[j] === guess)
+                  if(word[j].toLowerCase() === guess.toLowerCase())
                   {
                     answerArray [j] = guess;
                     remainingLetters--;
