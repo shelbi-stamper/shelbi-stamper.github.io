@@ -6,22 +6,25 @@
   
   <body>
     <h1 id = "main-heading">Hello World!</h1>
-    
     <script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
-    
     <script>
       var newHeadingText = prompt("Please provide a new heading:");
       // asking for the new header
-      $("#main-heading").innerHTML = newHeadingText;
+      $("#main-heading").text(newHeadingText);
+      // set new text
+      $("body").append("<p>This is a new paragraph.</p>");
+      for (var i = 0; i <3; i++)
+      {
+        // star counting at 0, stop when you get to 3, add 1 eavh time
+        var hobby = prompt("Tell me about one of your hobbies.");
+        $("body").append("<p>" + hobby + "</p>");
+      }
+      
+      $("body").append("<h1> This will fade out! </h1>");
+      $("h1").fadeOut(3000);
+      
     </script>
-    $("body")
-    for (var i = 0; i < 3; i++)
-    {
-      // start counting at 0, stop when you get to 3, add 1 each time
-      var hobby = prompt("Tell me about one of your hobbies.");
-      $("body").append("<p>" + hobby + "</p>");
-    }
-   </script>
     
   </body>
 </html>
+      
