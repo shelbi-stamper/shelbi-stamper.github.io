@@ -15,7 +15,7 @@
       $("body").append("<p>This is a new paragraph.</p>");
       for (var i = 0; i <3; i++)
       {
-        // star counting at 0, stop when you get to 3, add 1 eavh time
+        // star counting at 0, stop when you get to 3, add 1 each time
         var hobby = prompt("Tell me about one of your hobbies.");
         $("body").append("<p>" + hobby + "</p>");
       }
@@ -35,5 +35,17 @@ var timeUp = function ()
 {
 alert("Time's up!");
 };
+var doHomeworkAlarm = function()
+{
+alert("Hey! You need to do your homework!");
+};
+var timeoutId = setTimeout(doHomeworkAlarm, 60000);
+
+clearTimeout(timeoutId);
+
+</script>
+
+</body>
+</html>
 
 setTimeout(timeUp, 3000);
