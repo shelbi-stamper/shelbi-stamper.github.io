@@ -22,9 +22,18 @@
       
       $("body").append("<h1> This will fade out! </h1>");
       $("h1").fadeOut(3000);
-      
+     $("body").append( 
     </script>
     
   </body>
 </html>
-       
+       {
+$("h1").fadeOut(500).fadeIn(500);
+}
+
+var timeUp = function ()
+{
+alert("Time's up!");
+};
+
+setTimeout(timeUp, 3000);
