@@ -6,46 +6,58 @@
   
   <body>
     <h1 id = "main-heading">Hello World!</h1>
+    
     <script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
+    
     <script>
       var newHeadingText = prompt("Please provide a new heading:");
       // asking for the new header
       $("#main-heading").text(newHeadingText);
       // set new text
       $("body").append("<p>This is a new paragraph.</p>");
-      for (var i = 0; i <3; i++)
+      for (var i = 0; i < 3; i++)
       {
-        // star counting at 0, stop when you get to 3, add 1 each time
+        // start counting at 0, stop when you get to 3, add 1 each time
         var hobby = prompt("Tell me about one of your hobbies.");
         $("body").append("<p>" + hobby + "</p>");
       }
       
       $("body").append("<h1> This will fade out! </h1>");
-      $("h1").fadeOut(3000);
-     $("body").append( 
+      $("h1").fadeOut(3000).fadeIn(2000); // this fades out then fades back in
+      $("h1").slideUp(1000).slideDown(1000);
+      
+      for(var i = 0; i < 5; i++)
+      {
+        $("h1").fadeOut(500).fadeIn(500);
+      }
+      
+      var timeUp = function ()
+      {
+        alert("Time's Up!");
+      };
+      
+      setTimeout(timeUp, 12000);
+      
+      var doHomeworkAlarm = function()
+      {
+        alert("Hey! You need to do your homework!");
+      };
+      var timeoutId = setTimeout(doHomeworkAlarm, 60000);
+      
+      clearTimeout(timeoutId);
+      
+      var counter = 1;
+      
+      var printMessage = function()
+      {
+        $("body").append("<p> You have been staring"+ 
+                         " at your screen for " 
+                         +counter+" seconds. </p>");
+        counter++;
+      };
+      var intervalId = setInterval(printMessage, 1000);
+      
     </script>
     
   </body>
 </html>
-       {
-$("h1").fadeOut(500).fadeIn(500);
-}
-
-var timeUp = function ()
-{
-alert("Time's up!");
-};
-var doHomeworkAlarm = function()
-{
-alert("Hey! You need to do your homework!");
-};
-var timeoutId = setTimeout(doHomeworkAlarm, 60000);
-
-clearTimeout(timeoutId);
-
-</script>
-
-</body>
-</html>
-
-setTimeout(timeUp, 3000);
