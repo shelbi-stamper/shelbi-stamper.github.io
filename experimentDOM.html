@@ -35,7 +35,16 @@
       {
         alert("Time's Up!");
       };
+      $("body").click(clickHandler);
       
+      $("html").mousemove(function(event)
+                          {
+        $("#heading").offset({
+          left: event.pageX,
+          top: event.pageY
+        });
+      });
+     
       setTimeout(timeUp, 12000);
       
       var doHomeworkAlarm = function()
