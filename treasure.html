@@ -9,40 +9,56 @@
     <img id = "map" width=400 height=400
       src="https://nostarch.com/images/treasuremap.png">
       
-      <p id="distance"></p>
-      <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <p id="distance"<>/p>
+    
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    
+    <script>
+      var getRandomNumber = function(size)
+      {
+        return Math.floor(Math.random() * size);
+      };
       
-      <script>
-        var getRandomNumber = function(size)
-        {
-          return Math.floor(Math.random() * size);
-        };
+      var width = 400;
+      var height = 400;
+      
+      var treasure = {
+        x: getRandomNumber(width),
+        y: getRandomNumber(height)
+      };
+      
+      var getDistanceToTreasure = function(event, treasure)
+      {
+        var xDifference = event.offsetX - treasure.x;
+        var yDifference = event.offsety - treasure.y;
+        return.Math.sqrt((xDifference * xDifference) +
+                         (yDifference * yDifference)); //Pythagorean Theorem
+      };
+         var clicks = 0;
+      $("#map").click(function(event){
+         // Click handler code goes here
+         // Check for distance
+          var distance = getDistanceToTreasure(event, treasure);
+         // Check if they are close enough to find the treasure
+         // If they have 'found it' tell them how many clicks it took
+          if(distance <= 15)
+          {
+            alert("You are close to the treasure!");
+          }else{
+            // Give a hint if they are too far away
+          } if(distance <= 30)
+            {
+              alert("You are getting warmer!");
+            }else if (distance <= 100)
+            {
+              alert("You're making prgress");
+            }else if (distance >= 101)
+              alert("You need to keep looking!");
+            }
+      })=;
+         clicks++;
+         });  
         
-        var width = 400;
-        var height = 400;
-        var treasure = {
-          x: getRandomNumber(width),
-          y: getRandomNumber(height)
-        };
-        
-        var getDistanceToTreasure = function(event, treaure)
-        {
-          var xDifference = event.offsetX - treasure.X;
-          var yDifference = event.OffsetY - treasure.Y;
-          return Math.sqrt((xDifference * xDifference) +
-                           (yDifference * yDifference)); // Pythagorean Therorem
-        }
-      // Code goes here
-      var clicks = 0;
-              
-        $("#map").click(function (event){
-          // Click handler goes here
-          // check for distance
-          // check if they are close enough to find the treasure
-          // if they have 'found it' tell them how many clicks it took
-          // give a hint if they are too far away
-          clicks++;
-        });
     </script>
   </body>
- </html>
+</html>
