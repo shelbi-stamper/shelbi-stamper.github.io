@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cars</title>
+  </head>
+  <body>
+    <script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
+    
+    <script>
+      // All of your code for javascript goes here
+      // We are going to create an object called Car
+      var Car = function(x,y)
+      {
+        this.x = x; // set the object's x and y values
+        this.y = y;
+      };
+     
+      // Let's create an instance of this object called tesla
+      var tesla = new Car(10,20); // x=10, y=20
+      
+      // Let's create a method to draw a car
+      var drawCar = function(Car)
+      {
+        var carHtml = '<img src="https://nostarch.com/images/car.png">';
+        
+        var carElement = $(carHtml);
+        
+        carElement.css({
+        position: "absolute",
+        left: car.x,
+        top: car.y,
+       });
+       
+       $("body").append(carElement);
+     };
+     
+     drawCar(tesla);
+     var nissan = new Car(100, 200);
+     drawCar(nissan);
+    </script>
+   </body>
+   </html>
+        
