@@ -14,40 +14,46 @@
         this.x = x; // set the object's x and y values
         this.y = y;
       };
-     
+      
       // Let's create an instance of this object called tesla
       var tesla = new Car(10,20); // x=10, y=20
       
       // Let's create a method to draw a car
-      var drawCar = function(Car)
+      Car.prototype.draw = function()
       {
         var carHtml = '<img src="https://nostarch.com/images/car.png">';
         
-        var carElement = $(carHtml);
+        this.carElement = $(carHtml);
         
-        carElement.css({
-        position: "absolute",
-        left: car.x,
-        top: car.y,
-       });
-       
-       $("body").append(carElement);
-     };
-     
-      Car.prototype.moveRight = function()
-      {
-        this.x +5; // adds 5 to the x value
-        
-        // this updates the position on the screen
         this.carElement.css({
+          position: "absolute",
           left: this.x,
           top: this.y
         });
         
-     drawCar(tesla);
-     var nissan = new Car(100, 200);
-     drawCar(nissan);
-    </script>
-   </body>
-   </html>
+        $("body").append(this.carElement);
+      };
+      
+      Car.prototype.moveRight = function()
+      {
+        this.x += 5; // adds 5 to the x value
         
+        // this updates the position on the screen
+        this.carElement.css({
+          left: this.x, 
+          top: this.y
+        });
+      };
+      
+      tesla.draw();
+      tesla.moveRight();
+      tesla.moveRight();
+      tesla.moveRight();
+      var nissan = new Car(100, 200);
+      nissan.draw();
+      nissan.moveRight();
+      nissan.moveRight();
+      nissan.moveRight();
+    </script>
+  </body>
+</html>
