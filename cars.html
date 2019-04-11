@@ -34,6 +34,16 @@
        $("body").append(carElement);
      };
      
+      Car.prototype.moveRight = function()
+      {
+        this.x +5; // adds 5 to the x value
+        
+        // this updates the position on the screen
+        this.carElement.css({
+          left: this.x,
+          top: this.y
+        });
+        
      drawCar(tesla);
      var nissan = new Car(100, 200);
      drawCar(nissan);
