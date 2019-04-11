@@ -57,9 +57,14 @@
     </script>
   </body>
 </html>
-     telsa.draw();
-     telsa.moveLeft();
-     telsa.moveLeft();
-     telsa.moveLeft();
+      Car.prototype.moveLeft = function()
+      {
+        this.y += 5; // adds 5 to the y value
+        
+        // this updates the position on the screen
+        this.carElement.css({
+          left: this.x, 
+          top: this.y
+        });
      
      
